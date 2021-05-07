@@ -1,1 +1,3 @@
 - import_playbook: child1.yml
+- import_playbook: child2.yml
+- import_playbook: child3.yml
