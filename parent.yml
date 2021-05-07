@@ -1,16 +1,19 @@
 - hosts: localhost
   tasks:
+    #Setup variables
     - name: Get system hostname
       command: "hostname"
       register: command_output
     - name: Set system hostname fact
       set_fact:
         system_hostname: "{{  command_output.stdout  }}"
-
-- name: Import child 1
-  import_playbook: child1.yml
-  when: system_hostname is defined
-- import_playbook: child2.yml
-  when: system_hostname is not defined
-- import_playbook: child3.yml
-  when: system_hostname is not defined
+    #Run appropriate playbooks
+    - name: Import child 1
+      when: system_hostname is defined
+      import_playbook: child1.yml
+    - name: Import child 2
+      when: system_hostname is not defined
+      import_playbook: child2.yml
+    - name: Import child 3
+      when: system_hostname is not defined
+      import_playbook: child3.yml
