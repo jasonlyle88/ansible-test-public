@@ -1,5 +1,5 @@
 ---
 - name: Say hello world
   debug:
-    msg: Hello from child1, {{ inventory_hostname }}!
+    msg: Hello from child1, {{ system_hostname }}!
 ...
