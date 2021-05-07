@@ -2,4 +2,4 @@
   tasks:
     - name: Say hello world
       debug:
-        msg: Hello from {hostvars[server]['ansible_facts']['hostname']}
+        msg: Hello from { hostvars[server]['ansible_facts']['hostname'] }
