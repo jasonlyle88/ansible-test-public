@@ -1,3 +1,11 @@
+- hosts: localhost
+  tasks:
+    - name: Set System Hostname fact
+      command: "hostname"
+      register: command_output
+      set_fact:
+        system_hostname: "{{  command_output.stdout  }}"
+
 - import_playbook: child1.yml
 - import_playbook: child2.yml
 - import_playbook: child3.yml
