@@ -1,1 +1,1 @@
--import_playbook: child1.yml
+- import_playbook: child1.yml
