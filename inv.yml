@@ -7,7 +7,7 @@ all:
     work_laptop:
       ansible_host: jlyle-mac
     test_vm:
-      ansible_host: jlyle-Parallels-Virtual-Platform
+      ansible_host: jmltest
 
   children:
     mac_common:
