@@ -9,23 +9,23 @@
       set_fact:
         system_hostname: "{{  command_output.stdout  }}"
     #Include playbooks where appropriate
-    - name: Include child1
-      include: child1.yml
-      when: system_hostname is defined
-    - name: Include child2
-      include: child2.yml
-      when: system_hostname is not defined
-    - name: Include child3
-      include: child3.yml
-      when: system_hostname is not defined
+#     - name: Include child1
+#       include: child1.yml
+#       when: system_hostname is defined
+#     - name: Include child2
+#       include: child2.yml
+#       when: system_hostname is not defined
+#     - name: Include child3
+#       include: child3.yml
+#       when: system_hostname is not defined
 
 #Run appropriate playbooks
-#- when: system_hostname is defined
-#  import_playbook: child1.yml
-#
-#- when: system_hostname is not defined
-#  import_playbook: child2.yml
-#
-#- when: system_hostname is not defined
-#  import_playbook: child3.yml
+- when: system_hostname is defined
+ import_playbook: child1.yml
+
+- when: system_hostname is not defined
+ import_playbook: child2.yml
+
+- when: system_hostname is not defined
+ import_playbook: child3.yml
 ...
