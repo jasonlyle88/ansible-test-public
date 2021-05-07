@@ -1,0 +1,30 @@
+all:
+  hosts:
+    personal_laptop:
+      ansible_host: jlyle-mac-personal
+    personal_server:
+      ansible_host: pendragon-server
+    work_laptop:
+      ansible_host: jlyle-mac
+    test_vm:
+      ansible_host: jlyle-Parallels-Virtual-Platform
+
+  children:
+    mac_common:
+      hosts:
+        personal_laptop:
+        work_laptop:
+    mac_personal:
+      hosts:
+        personal_laptop:
+    mac_work:
+      hosts:
+        work_laptop:
+    linux_common:
+      hosts:
+        personal_server:
+        test_vm:
+    linux_server:
+      hosts:
+        personal_server:
+        test_vm:
