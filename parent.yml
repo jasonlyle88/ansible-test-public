@@ -21,11 +21,11 @@
 
 #Run appropriate playbooks
 - when: system_hostname is defined
- import_playbook: child1.yml
+  import_playbook: child1.yml
 
 - when: system_hostname is not defined
- import_playbook: child2.yml
+  import_playbook: child2.yml
 
 - when: system_hostname is not defined
- import_playbook: child3.yml
+  import_playbook: child3.yml
 ...
