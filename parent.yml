@@ -10,7 +10,7 @@
         system_hostname: "{{  command_output.stdout  }}"
     #Include playbooks where appropriate
     - name: Include child1
-      include: child1.yml
+      include: child1_tasks.yml
       when: system_hostname is defined
 #     - name: Include child2
 #       include: child2.yml
