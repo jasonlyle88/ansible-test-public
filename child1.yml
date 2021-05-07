@@ -2,4 +2,4 @@
   tasks:
     - name: Say hello world
       debug:
-        msg: Hello from child1!
+        msg: Hello from child1, {{ ansible_host }}!
